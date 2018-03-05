@@ -7,7 +7,32 @@ Class: CS361-400-W2018
 <?php
 
 
-//render  template and pass in values
+//connect to the database
+function dbConnect()
+{
+
+	// Database
+	$servername = "classmysql.engr.oregonstate.edu";
+	$username = "cs361_wicklant";
+	$password = "7681";
+	$db = "cs361_wicklant";
+	
+	static $database;
+	if(!isset($database)) // create new db connection if one does not already exist
+	{
+	//connect to database
+	$database = new mysqli($servername, $username, $password, $db);
+
+	if($database->connect_errno)
+	{
+		printf("Connect failed: " . $database->connect_error);
+	}
+}
+	return $database;
+	
+}
+
+//render  template and pass in error codes
 function render($template)
 {
 	//if template exists, render
