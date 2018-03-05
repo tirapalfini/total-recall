@@ -1,0 +1,38 @@
+body {
+	background: #4286f4;
+}
+
+.centered-header {
+  text-align: center; 
+  margin: 20px auto 0;
+}
+
+.landing-text {
+	color: #ffffff;
+	font-family: Arial;
+}
+
+.landing-button {
+	margin: 10px auto;
+	width: 80%;
+}
+
+.underline {
+	margin: 5px auto;
+	width: 80%;
+	text-align: center;
+	color: #ffffff;
+	border: solid 1px;
+}
+
+.btn-blue {
+	color: #ffffff;
+	background-color: #81a6ef;
+	border-color: #81a6ef;
+}
+
+.btn-blue:hover {
+	color: #ffffff;
+	background-color: #81a6ef;
+	border-color: #81a6ef;
+}
