@@ -1,26 +1,20 @@
-<!--
-Names: Group 10
-Assignment: Total Recall
-Class: CS361-400-W2018
--->
-
 <?php
 	require("../includes/config.php");
 
 	if($_SERVER["REQUEST_METHOD"] == "GET") // user tried to access via 
 	{
-		render("index.php");
+		render("landing_form.php", ["title" => "Welcome"]);
 	}
 	else if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		if(empty($_POST["email"])) // user omitted email
 		{
-			render("index.php");
+			render("landing_form.php", ["title" => "Welcome", "registerError" => "Email Required"]);
 		}
 		
 		else if(empty($_POST["password"])) // user omitted password
 		{
-			render("index.php");
+			render("landing_form.php", ["title" => "Welcome", "registerError" => "Password Required"]);
 		}
 
 		else
@@ -38,7 +32,7 @@ Class: CS361-400-W2018
 
 			if($num_row == 1) // email does exist
 			{
-				render("index.php");
+				render("landing_form.php", ["title" => "Welcome", "registerError" => "Email already registered"]);
 			}
 			
 			else // all information good
@@ -54,7 +48,7 @@ Class: CS361-400-W2018
 				#$_SESSION["email"] = $_POST["email"];
 				#$statement->close();
 
-				render("templates/home.php");
+				redirect("home.php");
 			}
 		}
 	}

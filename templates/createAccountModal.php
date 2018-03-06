@@ -5,7 +5,7 @@ Class: CS361-400-W2018
 -->
 
 <!-- Modal begin -->
-<div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+<div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

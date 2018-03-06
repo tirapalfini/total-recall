@@ -13,11 +13,15 @@ Class: CS361-400-W2018
    	 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Title -->
+		<?php if (isset($title)): ?>
+			<title>TotalRecall: <?= htmlspecialchars($title) ?></title>
+		<?php else: ?>
 		<title>TotalRecall</title>
+		<?php endif ?>
 
 		<!-- Stylesheets -->
-		<link href="public/css/bootstrap-flex.min.css" rel="stylesheet" type="text/css"/>
-		<link href="public/css/styles.css" rel="stylesheet"/>
+		<link href="css/bootstrap-flex.min.css" rel="stylesheet" type="text/css"/>
+		<link href="css/styles.css" rel="stylesheet"/>
 
 	</head>
 	<body>

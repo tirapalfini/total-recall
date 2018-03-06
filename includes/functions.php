@@ -33,20 +33,22 @@ function dbConnect()
 }
 
 //render  template and pass in error codes
-function render($template)
+function render($template, $values = [])
 {
 	//if template exists, render
-	if(file_exists("templates/$template"))
+	if(file_exists("../templates/$template"))
 	{
 
+		extract($values);
+		
 		//render header
-		require("templates/header.php");
+		require("../templates/header.php");
 		
 		//render template
-		require("templates/$template");
+		require("../templates/$template");
 
 		//render footer
-		require("templates/footer.php");
+		require("../templates/footer.php");
 	}
 
 	//else err
@@ -54,6 +56,19 @@ function render($template)
 	{
 		trigger_error("Invalid template: $template", E_USER_ERROR);
 	}
+}
+
+//redirect to a valid destination in the site
+function redirect($destination)
+{
+
+    //http://php.net/manual/en/function.header.php
+    $host = $_SERVER["HTTP_HOST"];
+    $path = rtrim(dirname($_SERVER["PHP_SELF"]), "/\\");
+    header("Location: http://$host$path/$destination");
+
+	// exit immediately since we're redirecting anyway
+	exit;
 }
 
 ?>
