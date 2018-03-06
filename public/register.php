@@ -9,25 +9,25 @@ Class: CS361-400-W2018
 
 	if($_SERVER["REQUEST_METHOD"] == "GET") // user tried to access via 
 	{
-		render("landing_form.php");
+		render("index.php");
 	}
 	else if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		if(empty($_POST["email"])) // user omitted email
 		{
-			render("landing_form.php");
+			render("index.php");
 		}
 		
 		else if(empty($_POST["password"])) // user omitted password
 		{
-			render("landing_form.php");
+			render("index.php");
 		}
 
 		else
 		{
 			$database = dbConnect();
 
-			// verify username does not already exist
+			// verify email does not already exist
 			$checkUser = $database->prepare("SELECT email FROM user WHERE email = ?");
 			$checkUser->bind_param('s', $_POST["email"]);
 			
@@ -38,7 +38,7 @@ Class: CS361-400-W2018
 
 			if($num_row == 1) // email does exist
 			{
-				render("landing_form.php");
+				render("index.php");
 			}
 			
 			else // all information good
@@ -46,7 +46,7 @@ Class: CS361-400-W2018
 				$email = $_POST["email"];
 
 				$statement = $database->prepare("INSERT INTO user (email, password, location, severity) VALUES (?, ?, ?, ?)");
-				$statement->bind_param('sss', $_POST["email"], $_POST["password"], $_POST["location"], $_POST["severity"]);
+				$statement->bind_param('ssss', $_POST["email"], $_POST["password"], $_POST["location"], $_POST["severity"]);
 				$statement->execute();
 
 				// log user in using newly created account
@@ -54,7 +54,7 @@ Class: CS361-400-W2018
 				#$_SESSION["email"] = $_POST["email"];
 				#$statement->close();
 
-				render("home.php");
+				render("templates/home.php");
 			}
 		}
 	}
