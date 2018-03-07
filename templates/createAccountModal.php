@@ -54,7 +54,12 @@ Class: CS361-400-W2018
                     <div class="form-group row">
                         <label for="severity" class="col-md-10 offset-md-1 col-form-label">Severity</label>
                         <div class="col-md-10 offset-md-1">
-                            <input type="severity" class="form-control form-control-lg" name="severity" placeholder="severity">
+                            <select class="custom-select" name="severity">
+                                <option selected>Select from one of the options below</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
