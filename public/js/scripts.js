@@ -13,4 +13,8 @@ $(document).ready(function() {
         //$('#loginModal').modal('hide');
         $('#createAccountModal').modal('show');
     });
+    $('#loginButton').on('click', function() {
+        //$('#loginModal').modal('hide');
+        $('#loginButton').modal('show');
+    });
 });
