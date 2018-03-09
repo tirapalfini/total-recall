@@ -3,7 +3,6 @@ Names: Group 10
 Assignment: Total Recall
 Class: CS361-400-W2018
 -->
-
 <?php
 
 
@@ -20,14 +19,14 @@ function dbConnect()
 	static $database;
 	if(!isset($database)) // create new db connection if one does not already exist
 	{
-	//connect to database
-	$database = new mysqli($servername, $username, $password, $db);
+		//connect to database
+		$database = new mysqli($servername, $username, $password, $db);
 
-	if($database->connect_errno)
-	{
-		printf("Connect failed: " . $database->connect_error);
+		if($database->connect_errno)
+		{
+			printf("Connect failed: " . $database->connect_error);
+		}
 	}
-}
 	return $database;
 	
 }

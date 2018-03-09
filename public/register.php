@@ -44,9 +44,9 @@
 				$statement->execute();
 
 				// log user in using newly created account
-				#$_SESSION["id"] = $statement->insert_id;
-				#$_SESSION["email"] = $_POST["email"];
-				#$statement->close();
+				$_SESSION["id"] = $statement->insert_id;
+				$_SESSION["email"] = $_POST["email"];
+				$statement->close();
 
 				redirect("home.php");
 			}
