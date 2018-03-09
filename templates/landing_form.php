@@ -4,7 +4,8 @@ Assignment: Total Recall
 Class: CS361-400-W2018
 -->
 <?php
-	require("createAccountModal.php")
+	require("createAccountModal.php");
+	require("loginModal.php")
 ?>
 		<div id="main-content" class="container">
 
@@ -19,7 +20,7 @@ Class: CS361-400-W2018
 							<button type="button" class="btn btn-secondary btn-lg btn-block btn-blue" id="createAccountModal" data-toggle="modal" data-target="#createAccountModal">Create Account</button>
 					</div>
 					<div class="row landing-button">
-							<button type="button" class="btn btn-secondary btn-lg btn-block btn-blue" data-toggle="modal" data-target="#loginModal">Log In</button>
+							<button type="button" class="btn btn-secondary btn-lg btn-block btn-blue" id="loginModal" data-toggle="modal" data-target="#loginModal">Log In</button>
 					</div>
 
 		</div>
