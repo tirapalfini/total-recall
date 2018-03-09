@@ -23,7 +23,7 @@
 		// check if password entered
 		else if(empty($_POST["password"]))
 		{
-			render("landing_form.php", ["title" =>"Welcome", "loginError" => " Passwords are required." ]);
+			render("landing_form.php", ["title" =>"Welcome", "loginError" => " Password is required." ]);
 		}
 		else 
 		{

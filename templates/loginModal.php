@@ -16,21 +16,21 @@ Class: CS361-400-W2018
             </div>
             <div class="modal-body">
 
-                <!-- Disply error when registration did not work -->
+                <!-- Disply error when login did not work -->
 
-                <?php if (isset($registerError)): ?>
+                <?php if (isset($loginError)): ?>
 
-                    <div id="registerError" class="row">
+                    <div id="loginError" class="row">
                         <div class="col-md-10 offset-md-1">
                             <div class="alert alert-danger" role="alert">
-                                <strong>Oops!</strong> <?php echo $registerError; ?>
+                                <strong>Oops!</strong> <?php echo $loginError; ?>
                             </div>
                         </div>
                     </div>
 
                 <?php endif ?>
 
-                <!-- Registraion form -->
+                <!-- Login form -->
 
                 <form action="login.php" method="post">
                     <div class="form-group row">

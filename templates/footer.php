@@ -9,5 +9,37 @@ Class: CS361-400-W2018
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/tether.min.js"></script>
 		<script src="js/scripts.js"></script>
+		
+		<!--On login error display modal immediately on load-->
+		<?php if (isset($loginError)): ?>
+			<script type="text/javascript">
+				$(window).load(function() {
+					$('#loginModal').modal('show');
+				});
+
+				$(document).ready(function() {
+					$("#closeLogin").click(function() {
+						$("#loginError").remove();
+					});
+				});
+			</script>
+		<?php endif ?>
+
+		<!--On register error display register modal immediately on load-->
+		<?php if (isset($registerError)): ?>
+
+			<script type="text/javascript">
+				$(window).load(function() {
+					$('#createAccountModal').modal('show');
+				});
+
+				$(document).ready(function() {
+					$("#closeRegister").click(function() {
+						$("#registerError").remove();
+					});
+				});
+			</script>
+		
+		<?php endif ?>
 	</body>
 </html>
