@@ -1,3 +1,4 @@
+
 <div id="main-content" class="container">
 	<!-- Title -->
     <div class="row">
@@ -5,8 +6,11 @@
         <hr class="underline">
     </div>
     <!-- Shopping List -->
+    <div class="row">
+        <a href="shopping_list.php" style="color: #ffffff">Shopping List</a>
+    </div>
     <div>
-        <table class="table" id="shopping-list">
+        <table class="table table-striped" id="shopping-list">
         	<thead>
         		<tr>
         			<th>Name</th>
@@ -14,16 +18,19 @@
         			<th>Description</th>
         		</tr>
         	</thead>
-        	<tbody align="center">
+        	<tbody align="left">
         		<?php
-        			foreach($positions as $position)
-        			{
-        				print ("<tr>");
-    					print ("<td>{$position["name"]}</td>");
-    					print ("<td>{$position["quanitity"]}</td>");
-   						print ("<td>{$position["description"]}</td>");
-    					print ("</tr>");
-        			}
+                    if(isset($positions))
+                    {
+            			foreach($positions as $position)
+            			{
+            				print ("<tr>");
+        					print ("<td>{$position["name"]}</td>");
+        					print ("<td>{$position["quantity"]}</td>");
+       						print ("<td>{$position["description"]}</td>");
+        					print ("</tr>");
+            			}
+                    }
         		?>
         	</tbody>
         </table>

@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 // set display type to allow for special characters 
 header('Content-Type: text/html; charset=ISO-8859-1');
 ob_start();
@@ -12,5 +10,5 @@ error_reporting(E_ALL);
 // requirements
 require("functions.php");
 
-
+session_start();
 ?>
