@@ -20,23 +20,25 @@
 		render("home_form.php", ["title" => "Welcome", "addProductError" => $error_message]);
 	}
 
-	//connect to the database
-	$database = dbConnect();
-
-	//make sql query
-	$productQuery = $database->prepare("INSERT INTO product (name, quantity, description, list_type, user_id) VALUES (?, ?, ?, ?, ?)");
-	$productQuery->bind_param('sssss', $product_name, $quantity, $description, $list_type, $user_id);
-
-	//check if insertion query failed
-	if(!$productQuery->execute()) 
+	else
 	{
-		$error_message = "There was a problem adding your product.  We're sorry! Please try again.";
-		render("home_form.php", ["title" => "Welcome", "addProductError" => $error_message]);
-		exit();
+		//connect to the database
+		$database = dbConnect();
+
+		//make sql query
+		$productQuery = $database->prepare("INSERT INTO product (name, quantity, description, list_type, user_id) VALUES (?, ?, ?, ?, ?)");
+		$productQuery->bind_param('sssss', $product_name, $quantity, $description, $list_type, $user_id);
+
+		//check if insertion query failed
+		if(!$productQuery->execute()) 
+		{
+			$error_message = "There was a problem adding your product.  We're sorry! Please try again.";
+			render("home_form.php", ["title" => "Welcome", "addProductError" => $error_message]);
+			exit();
+		}
+
+		//if successful, display shopping list
+		redirect("shoppingList.php");
 	}
-
-	//if successful, display shopping list
-	redirect("shoppingList.php");
-
 
 ?>
