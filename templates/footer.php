@@ -41,5 +41,23 @@ Class: CS361-400-W2018
 			</script>
 		
 		<?php endif ?>
+
+		<!--On addProduct error display addProduct modal immediately on load-->
+		<?php if (isset($addProductError)): ?>
+
+			<script type="text/javascript">
+				$(window).load(function() {
+					$('#addProductModal').modal('show');
+				});
+
+				$(document).ready(function() {
+					$("#closeAddProductMdal").click(function() {
+						$("#addProductError").remove();
+					});
+				});
+			</script>
+		
+		<?php endif ?>
+
 	</body>
 </html>

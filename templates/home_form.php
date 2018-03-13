@@ -1,3 +1,6 @@
+<?php
+    require("addProductModal.php");
+?>
 
 <div id="main-content" class="container">
 	<!-- Title -->
@@ -32,6 +35,11 @@
             			}
                     }
         		?>
+                <tr>
+                    <td>
+                        <button type = 'button' id='addProductModal' data-toggle='modal' data-target='#addProductModal'>Add Item</button>
+                    </td>
+                </tr>
         	</tbody>
         </table>
     </div>
