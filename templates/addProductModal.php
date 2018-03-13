@@ -36,7 +36,7 @@ Class: CS361-400-W2018
                     <div class="form-group row">
                         <label for="name" class="col-md-10 offset-md-1 col-form-label">Name</label>
                         <div class="col-md-10 offset-md-1">
-                            <input type="text" class="form-control form-control-lg" name="name" placeholder="name of product">
+                            <input type="text" class="form-control form-control-lg" name="product_name" placeholder="name of product">
                         </div>
                     </div>
                     <div class="form-group row">

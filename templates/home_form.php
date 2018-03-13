@@ -10,10 +10,10 @@
     </div>
     <!-- Shopping List -->
     <div class="row">
-        <a href="shopping_list.php" style="color: #ffffff">Shopping List</a>
+        <a href="shoppingList.php" style="color: #ffffff">Shopping List</a>
     </div>
     <div>
-        <table class="table table-striped" id="shopping-list">
+        <table class="table table-striped" id="shoppingList">
         	<thead>
         		<tr>
         			<th>Name</th>
