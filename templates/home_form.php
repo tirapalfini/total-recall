@@ -1,5 +1,11 @@
 <?php
     require("addProductModal.php");
+   if(isset($_POST['delete'])){
+        $product_name = $_POST['delete'];
+        $database = dbConnect();
+        $database->query("DELETE FROM product WHERE name='".$product_name."'");
+        redirect("shoppingList.php");
+    } 
 ?>
 
 <div id="main-content" class="container">
@@ -27,11 +33,14 @@
                     {
             			foreach($positions as $position)
             			{
+                            print( "<form action='' method='post'>");
             				print ("<tr>");
         					print ("<td>{$position["name"]}</td>");
         					print ("<td>{$position["quantity"]}</td>");
        						print ("<td>{$position["description"]}</td>");
+                            print ("<td><button type='submit' name='delete' value='".$position["name"]."'>Delete</button><td>");
         					print ("</tr>");
+                            print( "</form>");
             			}
                     }
         		?>
@@ -45,6 +54,6 @@
     </div>
 	<!-- Dummy button for triggering modal -->
 	<div class="row landing-button">
-			<a href="logout.php"><button type="button" class="btn btn-secondary btn-lg btn-block btn-blue" id="logout">Logout</button></a>
+	<a href="logout.php"><button type="button" class="btn btn-secondary btn-lg btn-block btn-blue" id="logout">Logout</button></a>
 	</div>
 </div>
