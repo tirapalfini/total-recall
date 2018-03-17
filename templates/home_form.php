@@ -2,11 +2,11 @@
     require("editProductModal.php");
     require("addProductModal.php");
    if(isset($_POST['delete'])){
-        $product_name = $_POST['delete'];
+        $product_id = $_POST['delete'];
         $database = dbConnect();
-        $database->query("DELETE FROM product WHERE name='".$product_name."'");
+        $database->query("DELETE FROM product WHERE id='".$product_id."'");
         redirect("shoppingList.php");
-    } 
+    }
 ?>
 
 <div id="main-content" class="container">
@@ -39,7 +39,7 @@
         					print ("<td>{$position["name"]}</td>");
         					print ("<td>{$position["quantity"]}</td>");
        						print ("<td>{$position["description"]}</td>");
-                            print ("<td><button type='submit' name='delete' value='".$position["name"]."'>Delete</button><td>");
+                            print ("<td><button type='submit' name='delete' value='".$position["id"]."'>Delete</button><td>");
                             print ("<td><button type = 'button' id='editProductModal' data-toggle='modal' data-target='#editProductModal'>Edit</button><td>");
         					print ("</tr>");
                             print( "</form>");
